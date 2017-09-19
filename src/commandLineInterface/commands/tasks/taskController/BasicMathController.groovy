@@ -1,6 +1,7 @@
 package commandLineInterface.commands.tasks.taskController
 
 import commandLineInterface.commands.CLICommand
+import commandLineInterface.commands.tasks.helpers.Numbers
 import commandLineInterface.commands.tasks.task.BasicMath
 
 class BasicMathController implements CLICommand {
@@ -55,11 +56,9 @@ class BasicMathController implements CLICommand {
      */
     @Override
     String executeCommand(String commandName, List args) {
-        def allValuesNumeric = args.findAll {
-            it.isNumber()
-        }.size() == args.size()
+        def arguments = new Numbers(args)
 
-        allValuesNumeric ? evaluateOperation(commandName, args) : this.errorMessage
+        arguments.areNumeric() ? evaluateOperation(commandName, arguments) : this.errorMessage
     }
 
     /**
@@ -70,14 +69,12 @@ class BasicMathController implements CLICommand {
      * @param args the arguments to be given to the desired BasicMath method
      * @return the result of the evaluated expression
      */
-    private String evaluateOperation(String operation, List args) {
+    private String evaluateOperation(String operation, Numbers args) {
 
         // String to hold the expression result
         String output = "";
 
-        def numericArgs = args.each {
-            it -> Double.parseDouble(it)
-        }
+        def numericArgs = args.getIntValues() != null ? args.getIntValues() : args.getDoubleValues()
 
         switch (operation) {
         // add
