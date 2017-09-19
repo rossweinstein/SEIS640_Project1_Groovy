@@ -3,9 +3,6 @@ package commandLineInterface.commands.tasks.taskController
 import commandLineInterface.commands.CLICommand
 import commandLineInterface.commands.tasks.task.HelpMenu
 
-/**
- * Created by rweinstein on 9/19/17.
- */
 class HelpMenuController implements CLICommand {
 
     final command = "help"
@@ -16,7 +13,7 @@ class HelpMenuController implements CLICommand {
     }
 
     @Override
-    Map<String, String> commandDicitonary() {
+    Map<String, String> commandDictionary() {
         def helpDictionary = [:] as HashMap
         helpDictionary.put(command, "Shows all available commands and their functionality")
         helpDictionary

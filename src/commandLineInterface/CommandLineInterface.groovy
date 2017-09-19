@@ -34,10 +34,12 @@ class CommandLineInterface {
     }
 
     private String cliStartUpBanner() {
-        "************************************************************************\n" +
-        "** SEIS 640-01 | Project 1 - COMMAND LINE INTERFACE | Ross Weinstein  **\n" +
-        "**                                                                    **\n" +
-        "** type 'help' for list of available commands and their descriptions  **\n" +
-        "************************************************************************\n";
+        """
+        ************************************************************************
+        ** SEIS 640-01 | Project 1 - COMMAND LINE INTERFACE | Ross Weinstein  **
+        **                                                                    **
+        ** type 'help' for list of available commands and their descriptions  **
+        ************************************************************************
+        """.stripMargin().stripIndent()
     }
 }

@@ -10,7 +10,7 @@ class CommandCollection {
 
         try {
 
-            commandList.add(onlyIfNamesUnique(new FunWithStringController()))
+            commandList.add(onlyIfNamesUnique(commandList, new FunWithStringController()))
 
         } catch (Exception e) {
             println(e.getMessage())
@@ -22,7 +22,7 @@ class CommandCollection {
     private static CLICommand onlyIfNamesUnique(List<CLICommand> commandList, CLICommand command) {
 
         def duplicate = commandList.find {
-            it.commandDicitonary().containsKey(command)
+            it.commandDictionary().containsKey(command)
         }
 
         if (duplicate != null) {

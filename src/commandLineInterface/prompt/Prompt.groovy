@@ -4,7 +4,7 @@ class Prompt {
 
     String command
     List<String> arguments
-    private String prompt = ">>>"
+    private String prompt = ">>> "
     private InputHelper input = new InputHelper()
 
     void getCLICommand() {
