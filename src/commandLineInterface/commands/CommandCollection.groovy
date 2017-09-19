@@ -1,5 +1,6 @@
 package commandLineInterface.commands
 
+import commandLineInterface.commands.tasks.taskController.BasicMathController
 import commandLineInterface.commands.tasks.taskController.FunWithStringController
 
 class CommandCollection {
@@ -23,8 +24,7 @@ class CommandCollection {
             be sure to user the helper method onlyIfAllCommandNamesUnique to avoid name collision
              */
             commandList.add(onlyIfNamesUnique(commandList, new FunWithStringController()))
-
-
+            commandList.add(onlyIfNamesUnique(commandList, new BasicMathController()))
 
 
         } catch (Exception e) {
