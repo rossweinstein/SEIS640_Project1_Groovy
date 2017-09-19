@@ -1,6 +1,4 @@
 
-.gitignore
 .idea/
 groovy_CLI.iml
 out/
-src/
